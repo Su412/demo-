@@ -29,7 +29,7 @@ openai.api_key = "自己的api key"
 def chatbot_response(user_message):
     if contains_filtered_keyword(user_message):
         # 不傳送訊息到 OpenAI，也不返回任何回覆
-        return None
+        return False
     else:
         response = openai.Completion.create(
             engine="gpt-3.5-turbo-instruct",  # 使用新的模型
